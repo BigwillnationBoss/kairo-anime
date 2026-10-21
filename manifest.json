@@ -1,0 +1,19 @@
+{
+  "name": "Kairo Anime",
+  "short_name": "Kairo Anime",
+  "description": "Discover anime, track episodes, and find legal viewing options.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#090b12",
+  "theme_color": "#090b12",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

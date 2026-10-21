@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090b12">
+  <meta name="description" content="Kairo Anime — discover anime, track episodes, and find legal free streaming sources.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <title>Kairo Anime</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Kairo Anime home"><span class="brand-mark">K</span><span>KAIRO<span class="brand-light"> ANIME</span></span></a>
+      <button class="icon-button" id="search-focus" aria-label="Focus search">⌕</button>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-art" aria-hidden="true"><div class="orb"></div><div class="hero-lines"></div></div>
+        <div class="hero-content">
+          <p class="eyebrow"><span class="live-dot"></span> YOUR NEXT OBSESSION</p>
+          <h1 id="hero-title">Enter a world<br><span>beyond ordinary.</span></h1>
+          <p class="hero-copy">Discover anime. Keep your place. Find where to watch.</p>
+          <button class="primary-button" id="explore-button">Explore anime <span>↗</span></button>
+        </div>
+        <div class="hero-stamp">ANIME<br>WITHOUT<br>LIMITS*</div>
+      </section>
+
+      <section class="search-row" id="catalog">
+        <label class="search-box"><span>⌕</span><input id="search-input" type="search" placeholder="Search anime titles..." autocomplete="off"></label>
+        <button class="filter-button" id="filter-toggle">☷ Filters</button>
+      </section>
+      <section class="filters" id="filters" hidden>
+        <div class="filter-group"><span class="filter-label">AUDIO</span><div class="chips" id="audio-chips">
+          <button class="chip active" data-audio="all">All</button><button class="chip" data-audio="dub">English Dub</button><button class="chip" data-audio="sub">Subbed</button>
+        </div></div>
+        <div class="filter-group"><span class="filter-label">GENRE</span><div class="chips" id="genre-chips">
+          <button class="chip active" data-genre="all">All genres</button><button class="chip" data-genre="Action">Action</button><button class="chip" data-genre="Fantasy">Fantasy</button><button class="chip" data-genre="Isekai">Isekai</button><button class="chip" data-genre="Romance">Romance</button><button class="chip" data-genre="Adventure">Adventure</button>
+        </div></div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading"><div><p class="eyebrow">HANDPICKED FOR YOU</p><h2>Explore anime</h2></div><span class="result-count" id="result-count"></span></div>
+        <div class="anime-grid" id="anime-grid"></div>
+        <p class="empty-state" id="empty-state" hidden>No anime found. Try another title or filter.</p>
+      </section>
+
+      <section class="section continue-section">
+        <div class="section-heading"><div><p class="eyebrow">PICK UP WHERE YOU LEFT OFF</p><h2>Continue watching</h2></div><button class="text-button" id="clear-progress">Clear</button></div>
+        <div id="continue-list" class="continue-list"></div>
+      </section>
+      <section class="section">
+        <div class="section-heading"><div><p class="eyebrow">YOUR PERSONAL COLLECTION</p><h2>My watchlist</h2></div><span class="result-count" id="watch-count">0 saved</span></div>
+        <div class="anime-grid" id="watch-grid"></div>
+        <p class="empty-state" id="watch-empty">Your watchlist is waiting. Tap ♡ on any anime to save it here.</p>
+      </section>
+      <section class="legal-note">
+        <span class="note-icon">ⓘ</span><p><strong>About streaming</strong><br>This app helps you discover titles and locate legal viewing options. Availability varies by country and title. It does not host or unlock copyrighted episodes.</p>
+      </section>
+    </main>
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button class="nav-item active" data-target="top"><span>⌂</span>Home</button>
+      <button class="nav-item" data-target="catalog"><span>⌕</span>Discover</button>
+      <button class="nav-item" data-target="watchlist"><span>♡</span>Watchlist</button>
+      <button class="nav-item" data-target="continue"><span>◷</span>History</button>
+    </nav>
+  </div>
+
+  <dialog id="anime-dialog" class="anime-dialog">
+    <button class="dialog-close" id="dialog-close" aria-label="Close">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
